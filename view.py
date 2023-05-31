@@ -1,5 +1,5 @@
 import text
-import model
+
 
 def main_menu() -> int:
     print(text.main_menu)
@@ -10,9 +10,9 @@ def main_menu() -> int:
 
 
 def print_message(message: str):
-    print('\n' + '=' * len(message))
+    print('\n' + '-' * len(message))
     print(message)
-    print('=' * len(message) + '\n')
+    print('-' * len(message) + '\n')
 
 
 def print_contacts(book: list[dict[str, str]], error: str):
@@ -37,13 +37,3 @@ def input_contact(message) -> dict[str, str]:
 
 def input_search(message) -> str:
     return input(message)
-
-
-def ask_user_for_save_pb():
-    while True:
-        save_or_not = input(text.save_or_not)
-        if save_or_not == 'y':
-            model.save_pb()
-            break
-        elif save_or_not == 'n':
-            break
